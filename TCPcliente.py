@@ -1,7 +1,7 @@
 from socket import *
 import time
 
-servidorNombre = "54.101.x.246" 
+servidorNombre = "54.147.175.249" 
 servidorPuerto = 12000
 
 def request(ind,val):
