@@ -1,7 +1,7 @@
 from socket import *
 import time
 
-servidorNombre = "54.147.175.249" 
+servidorNombre = "54.197.33.196" 
 servidorPuerto = 12000
 
 def request(ind,val):
@@ -13,11 +13,11 @@ for i in range(6):
     clienteSocket = socket(AF_INET, SOCK_STREAM)
     clienteSocket.connect((servidorNombre,servidorPuerto))
     mensaje = request(i,sal)
-    print(mensaje)
+    print("MENSAJE ENVIADO", mensaje)
     clienteSocket.send(bytes(mensaje, "utf-8"))
     if (mensaje=='saldo'):
         sal = int(str(clienteSocket.recv(1024), "utf-8"))
-        print("Respuesta_S:\n"+str(sal))
+        print("Respuesta:\n" + str(sal))
     else:
         mensajeRespuesta= clienteSocket.recv(1024)
         print("Respuesta:\n" + str(mensajeRespuesta, "utf-8"))
